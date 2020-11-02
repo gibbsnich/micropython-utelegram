@@ -6,3 +6,10 @@ wifi_config = {
 utelegram_config = {
     'token': 'TOKEN'
 }
+
+github_config = {
+    'api': 'https://api.github.com',
+    'repo': 'repo_name',
+    'owner': 'owner_username',
+    'token': 'TOKEN'
+}
