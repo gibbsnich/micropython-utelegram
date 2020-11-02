@@ -33,7 +33,7 @@ class Response:
 
 def request(method, url, data=None, json=None, headers={}, stream=None):
     repl = rrequest(method, url, data=data, json=json, headers=headers, stream=stream)
-    print(repl)
+    #print(repl)
     if "resp" in repl:
         return repl["resp"]
     import gc
@@ -97,7 +97,7 @@ def rrequest(method, url, data=None, json=None, headers={}, stream=None):
             l = s.readline()
             if not l or l == b"\r\n":
                 break
-            print(l)
+            #print(l)
             if l.startswith(b"Transfer-Encoding:"):
                 if b"chunked" in l:
                     raise ValueError("Unsupported " + l)
@@ -111,7 +111,7 @@ def rrequest(method, url, data=None, json=None, headers={}, stream=None):
         raise
 
     if redir is not None:
-        print('redirect to ', redir)
+        #print('redirect to ', redir)
         return {"redir":redir}
     else:
         resp = Response(s)
